@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
     <div></div>
   </div>
 </template>
@@ -10,13 +10,14 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: "home",
+  name: 'aa',
   components: {
     HelloWorld
   },
   methods: {
-    action () {
-      console.log(1);
+    action() {
+      var str = '23424'
+      console.log(1)
     }
   }
 }
