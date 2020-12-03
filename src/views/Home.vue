@@ -18,6 +18,8 @@ export default {
     action() {
       var str = '23424'
       console.log(1)
+
+
     }
   }
 }
