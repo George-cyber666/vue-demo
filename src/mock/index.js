@@ -1,3 +1,3 @@
 import Mock from 'mockjs'
 
-Mock.mock('\/api\/goodslist', 'get', {})
+Mock.mock('/api/goodslist', 'get', {})
