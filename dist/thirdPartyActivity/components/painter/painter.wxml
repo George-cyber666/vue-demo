@@ -1,0 +1,4 @@
+<view class="canvas-wrap">
+  
+</view>
+<canvas canvas-id="k-canvas" style="{{painterStyle}}{{customStyle}}" />

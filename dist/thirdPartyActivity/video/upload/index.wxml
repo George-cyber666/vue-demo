@@ -1,0 +1,26 @@
+<!--pages/video/upload/index.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="bottomDom">
+  <view class="videoHome" bindtap="goVideoList">视频大厅</view>
+  <view class="myVideo" bindtap="goMyVideo">我的视频</view>
+  <view class="upload" bindtap="goUpload">
+    <image mode="aspectFill" src="{{imgsrc}}uploadIcon.png"></image>
+  </view>
+</view>
+<view class="uploadPic1">
+  <image mode="aspectFill" bindtap="chooseVideo" src="{{imgsrc}}uploadPic1.png"></image>
+  <view class="videoBox" wx:if="{{videoUrl!=''}}">
+    <video object-fit="contain" src="{{videoUrl}}"></video>
+  </view>
+</view>
+
+<view class="title">上传视频封面图</view>
+<view class="videoPic" bindtap="chooseImageTap">
+  <image mode="aspectFill" src="{{imgsrc}}uploadPic2.png"></image>
+  <view class="uploadImg" wx:if="{{uploadImg[0]!=''}}">
+    <image mode="widthFix" src="{{uploadImg[0]}}"></image>
+  </view>
+</view>
+<view class="btn_upload" bindtap="upload">
+  <image mode="aspectFill" src="{{imgsrc}}btn_upload.png"></image>
+</view>

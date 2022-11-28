@@ -1,0 +1,22 @@
+<!--pages/video/detail/index.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+
+<view class="tcDom">
+  <view class="btn_back" bindtap="back">
+    <image mode="aspectFill" src="{{imgsrc}}btn_back.png"></image>
+  </view>
+  <view class="tcBox">
+    <view class="videoBox">
+      <video autoplay="{{false}}" object-fit="contain" src="{{video_path}}"></video>
+    </view>
+
+  </view>
+  <view class="bottom">
+    <view class="nickName">{{nickname}}</view>
+    <view class="time">{{createymd}}</view>
+    <view class="icon" bindtap="addVideoHelp">
+      <image mode="aspectFill" src="{{imgsrc}}{{is_zan==1?'icon4':'icon3'}}.png"></image>
+    </view>
+    <view class="num">{{help_number}}</view>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+<!--pages/activity1/my/myprize.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="content1">
+  <!-- <view class="content1"> -->
+  <view class="home">
+    <view class="music {{isMusic ? 'musicon':''}}" catchtap="music">
+      <view class="music-li"></view>
+      <view class="music-li"></view>
+      <view class="music-li"></view>
+    </view>
+    <!-- <view class="prize" wx:for="{{dota.prizelist}}" wx:key="index">
+      <view class="prizetext1">{{item.tips}}</view>
+      <view class="prizetext2">奖品将以快递形式寄送</view>
+    </view> -->
+    <view class="prize">
+      <view class="prizetext1">【地区奖】中海30周年定制徽章+价值300元运动礼包</view>
+      <view class="prizetext2">奖品将以快递形式寄送</view>
+    </view>
+    <view class="prize">
+      <view class="prizetext1">【全国奖】中海30周年定制徽章+中海30周年定制奖牌</view>
+      <view class="prizetext2">奖品将以快递形式寄送</view>
+    </view>
+    <view style="padding-bottom: 130rpx;" wx:if="{{dota.activityStatus==3}}">
+      <view class="subinput">
+        <view class="awardname" wx:if="{{dota.prizelist.length==1}}">恭喜你获得 【{{dota.prizelist[0].prize_type}}】第 {{dota.prizelist[0].pm}} 名</view>
+        <view class="awardname" wx:if="{{dota.prizelist.length==2}}">恭喜你获得 【{{dota.prizelist[0].prize_type}}】第 {{dota.prizelist[0].pm}} 名/【{{dota.prizelist[1].prize_type}}】第 {{dota.prizelist[1].pm}} 名</view>
+        <view class="title">请填写并确认领奖信息</view>
+        <view class="subbox">
+          <view><text>*</text>业主姓名：</view>
+          <input type="text" placeholder="请填写" value="{{dota.userInfo.name}}" bindinput="changename" />
+        </view>
+        <view class="subbox">
+          <view><text>*</text>联系电话：</view>
+          <input type="number" maxlength="11" placeholder="请填写" value="{{dota.userInfo.tel}}" bindinput="changephone" />
+        </view>
+        <view class="subbox">
+          <view><text>*</text>所在城市：</view>
+
+          <picker range="{{sfpicker}}" bindchange="sfpickerc">
+            <view wx:if="{{dota.userInfo.city}}" style="text-align: right;">{{dota.userInfo.city}}</view>
+            <view wx:else="{{!dota.userInfo.city}}" style="color: #808080;text-align: right;">请填写</view>
+          </picker>
+        </view>
+        <view class="subbox">
+          <view><text>*</text>项目名称：</view>
+          <input type="text" placeholder="请填写" value="{{dota.userInfo.village}}" bindinput="changevillage" />
+        </view>
+        <view class="subbox">
+          <view><text>*</text>收件地址:</view>
+          <input type="text" placeholder="请填写" value="{{dota.userInfo.address}}" bindinput="changeaddress" />
+        </view>
+      </view>
+      <button class="subbtn" bindtap="clicksubmit" wx:if="{{dota.is_enter == 0}}">提交奖品领取信息</button>
+    </view>
+    <view class="award" wx:elif="{{dota.activityStatus==1}}">
+      <image mode="aspectFill" src="{{imgsrc}}activity/awardBg.png?v=11"></image>
+      <view class="awardTip">
+        <view>活动进行中还未开奖</view> 
+        <view>快去累计积分吧！ </view> 
+          <view>大奖花落谁家敬请期待哦～</view> 
+      </view>
+    </view>
+    <view class="award" wx:elif="{{dota.activityStatus==2}}">
+      <image mode="aspectFill" src="{{imgsrc}}activity/awardBg.png?v=11"></image>
+      <view class="awardTip">
+        <view>很抱歉您未获得奖品！</view> 
+        
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- wx:if="{{dota.is_prize == 1}}"
+<view class="content2" wx:if="{{dota.is_prize == 0}}">
+  <image mode="aspectFill" src="{{imgsrc}}activity/myprizeoff.png?v=11"></image>
+</view> -->
+
+<view class="bar">
+  <view bindtap="clicktoindex" class="baricon1">
+    <image src="{{imgsrc}}baricon4.png"></image>
+    <view>首页</view>
+  </view>
+  <view bindtap="clicktoac" class="baricon2">
+    <image src="{{imgsrc}}baricon5.png"></image>
+    <view>活动</view>
+  </view>
+  <view bindtap="clicktomy" class="baricon3">
+    <image src="{{imgsrc}}baricon6.png"></image>
+    <view>我的</view>
+  </view>
+</view>

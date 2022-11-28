@@ -1,0 +1,71 @@
+/* pages/thirdPartyActivity/activity/index/shade.wxss */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #e3f6ff;
+}
+
+.container-hd {
+  width: 600rpx;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 26rpx;
+  padding-top: 230rpx;
+}
+
+.questionnaire {
+  width: 706rpx;
+  height: 940rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  padding-top: 274rpx;
+  padding-left: 130rpx;
+  padding-right: 108rpx;
+  box-sizing: border-box;
+  background: url(https://small.moreedge.cn/zh_smallxcx/activity1/questionnaire-1.png) no-repeat top/100%;
+}
+
+.inp {
+  display: flex;
+}
+
+.inp view {
+  width: 150rpx;
+  font-weight: 700;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.inp input {
+  width: 316rpx;
+  border-bottom: 5rpx solid #000;
+  text-align: right;
+  padding-right: 10rpx;
+}
+
+.inps {
+  display: flex;
+}
+
+.inps view {
+  width: 260rpx;
+  font-weight: 700;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.inps input {
+  width: 202rpx;
+  border-bottom: 5rpx solid #000;
+  text-align: right;
+  padding-right: 10rpx;
+}
+
+.questionnaire-btn {
+  width: 654rpx !important;
+  height: 84rpx;
+  margin: 0 auto;
+  margin-top: 72rpx;
+  background: url(https://small.moreedge.cn/zh_smallxcx/activity1/nextone.png) no-repeat top/100%;
+}
