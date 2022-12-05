@@ -20,7 +20,7 @@ module.exports = {
           test: /main.css/,
           // 相同优先级的loader链，执行顺序为：从右到左，从下到上
           // 如use: ['loader1', 'loader2', 'loader3']，执行顺序为 loader3 → loader2 → loader1
-          loader: MyStyleLoader,
+          // loader: MyStyleLoader,
         }
       ]
     }

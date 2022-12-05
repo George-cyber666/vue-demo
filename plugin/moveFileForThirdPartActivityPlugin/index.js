@@ -27,6 +27,7 @@ class moveFileForThirdPartActivityPlugin {
   }
   // 递归创建文件目录并且复制文件
   copyFile(src, target) {
+    if (fs.existsSync(target)) return
     fs.mkdirSync(target)
     let that = this
     getDicInfo(src, target)

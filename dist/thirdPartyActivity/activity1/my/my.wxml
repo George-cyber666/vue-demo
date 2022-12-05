@@ -1,0 +1,58 @@
+<!--pages/activity1/my/my.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="content">
+  <view class="home">
+    <view class="music {{isMusic ? 'musicon':''}}" catchtap="music">
+      <view class="music-li"></view>
+      <view class="music-li"></view>
+      <view class="music-li"></view>
+    </view>
+    <view class="integralview">
+      <view class="avter">
+        <image src="{{dota.userInfo.head}}"></image>
+      </view>
+      <view class="integral-name">{{dota.userInfo.nickname}}</view>
+      <view class="integral-city">
+        <view class="icon1"></view> 城市排名 {{dota.cityPm}}
+      </view>
+      <view class="integral-nub">积分: <view class="integral-nubs">{{dota.userInfo.score}}</view>
+      </view>
+      <view class="integral-nat">
+        <view class="icon2"></view>全国排名 {{dota.countyPm}}
+      </view>
+    </view>
+    <view class="mylist">
+      <view class="myli1" bindtap="clicktomyintegral">
+        <image src="{{imgsrc}}activity/myicon1.png"></image>
+        <view>我的积分</view>
+      </view>
+      <view class="myli2" bindtap="clicktomyprize">
+        <image src="{{imgsrc}}activity/myicon2.png"></image>
+        <view>我的奖品</view>
+      </view>
+      <view class="myli3" bindtap="clicktomycer">
+        <image src="{{imgsrc}}activity/myicon3.png"></image>
+        <view>我的证书</view>
+      </view>
+      <button class="myli4" open-type="share">
+        <image src="{{imgsrc}}activity/myicon4.png"></image>
+        <view>分享转发</view>
+      </button>
+    </view>
+  </view>
+</view>
+
+<view class="bar">
+  <view bindtap="clicktoindex" class="baricon1">
+    <image src="{{imgsrc}}baricon4.png"></image>
+    <view>首页</view>
+  </view>
+  <view bindtap="clicktoac" bindtap="clicktoac" class="baricon2">
+    <image src="{{imgsrc}}baricon5.png"></image>
+    <view>活动</view>
+  </view>
+  <view class="baricon3">
+    <image src="{{imgsrc}}baricon3.png"></image>
+    <view style="color:#168EF0">我的</view>
+  </view>
+</view>

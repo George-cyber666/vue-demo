@@ -1,0 +1,28 @@
+<!--pages/activity/index/questionnairefour.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="container">
+  <view class="container-hd">为了便于后续能策划出更丰富的活动，以满足不同家庭的需求，请完善以下信息。</view>
+  <view class="questionnaire">
+    <view class="questionnaire-li {{ indexid == '0'?'active':''}}" bindtap="clickcheck" data-id="0">
+      <view class="questionnaires questionnaires-a"></view>
+      <view class="questionnairetext">5分</view>
+    </view>
+    <view class="questionnaire-li {{ indexid == '1'?'active':''}}" bindtap="clickcheck" data-id="1">
+      <view class="questionnaires questionnaires-b"></view>
+      <view class="questionnairetext">4分</view>
+    </view>
+    <view class="questionnaire-li {{ indexid == '2'?'active':''}}" bindtap="clickcheck" data-id="2">
+      <view class="questionnaires questionnaires-c"></view>
+      <view class="questionnairetext">3分</view>
+    </view>
+    <view class="questionnaire-li {{ indexid == '3'?'active':''}}" bindtap="clickcheck" data-id="3">
+      <view class="questionnaires questionnaires-d"></view>
+      <view class="questionnairetext">2分</view>
+    </view>
+    <view class="questionnaire-li {{ indexid == '4'?'active':''}}" bindtap="clickcheck" data-id="4">
+      <view class="questionnaires questionnaires-e"></view>
+      <view class="questionnairetext">1分</view>
+    </view>
+  </view>
+  <button class="questionnaire-btn" bindtap="clicktoplan"></button>
+</view>

@@ -1,0 +1,35 @@
+<!--pages/thirdPartyActivity/activity/index/shade.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="container">
+  <view class="container-hd">为了便于活动开展及后续奖品登记发放，请完善以下相关信息，信息仅作为本次活动业主验证用途</view>
+  <view class="questionnaire">
+    <view class="inp">
+      <view>业主姓名</view>
+      <input placeholder="请填写" type="text" maxlength="16" value="{{dota.name}}" bindinput="changeinp1" />
+    </view>
+    <view class="inp">
+      <view>联系电话</view>
+      <input placeholder="请填写" type="number" maxlength="11" value="{{dota.tel}}" bindinput="changeinp2" />
+    </view>
+    <view class="inp">
+      <view>所在城市</view>
+      <input placeholder="请选择" type="text" disabled value="{{dota.city}}" />
+      <!-- <picker range="{{sfpicker}}" bindchange="changeinp3">
+        
+      </picker> -->
+    </view>
+    <view class="inp">
+      <view>项目名称</view>
+      <input placeholder="请填写" type="text" maxlength="16" value="{{dota.inp}}" bindinput="changeinp4" />
+    </view>
+    <view class="inp">
+      <view>房间号</view>
+      <input placeholder="请填写" type="text" maxlength="16" value="{{dota.adr}}" bindinput="changeinp5" />
+    </view>
+    <view class="inps">
+      <view>身份证后6位验证</view>
+      <input placeholder="请填写" type="idcard" maxlength="6" value="{{dota.sfz}}" bindinput="changeinp6" />
+    </view>
+  </view>
+  <button class="questionnaire-btn" bindtap="clicktoplan"></button>
+</view>

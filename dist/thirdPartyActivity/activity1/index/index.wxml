@@ -1,0 +1,219 @@
+<!--pages/activity1/index/index.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+  <scroll-view class="content" scroll-y="true" style="height: 100vh;" scroll-into-view="{{isdetail?'detail':''}}" scroll-with-animation="true">
+    <view class="container">
+      <image src="{{imgsrc}}bg2.png?v={{sjs}}"></image>
+      <view class="rule" bindtap="clickrule">活动规则</view>
+      <view class="btn_home" bindtap="goHome">返回首页</view>
+      <view class="music {{isMusic ? 'musicon':''}}" catchtap="music">
+        <view class="music-li"></view>
+        <view class="music-li"></view>
+        <view class="music-li"></view>
+      </view>
+      <button class="uploadbtn" bindtap="uploadrun">上传步数</button>
+      <view class="home">
+        <view class="home-s">
+          <view>点亮城市</view>
+          <view>{{dota.cityInfo.cityNum}}</view>
+        </view>
+        <view class="home-s">
+          <view>参与人数</view>
+          <view>{{dota.cyPeopleNum}}</view>
+        </view>
+      </view>
+      <view class="sroll-swiper">
+        <view class="swiper">
+          <view>{{dota.cityInfo.cityName}}</view>
+        </view>
+      </view>
+      <view class="integralview">
+        <view class="avter">
+          <image src="{{visitor_base_info.avatar}}"></image>
+        </view>
+        <view class="integral-name">{{visitor_base_info.nickname}}</view>
+        <view class="integral-city">
+          <view class="icon1"></view> 城市排名 {{dota.cityPm}}
+        </view>
+        <view class="integral-nub">积分: <view class="integral-nubs">{{dota.userInfo.score?dota.userInfo.score:'0'}}</view>
+        </view>
+        <view class="integral-nat">
+          <view class="icon2"></view>全国排名 {{dota.countyPm}}
+        </view>
+      </view>
+    </view>
+    <view class="focus">
+      <view class="focus-li1" bindtap="changefocus" data-id="1">城市榜({{dota.userInfo.city}})</view>
+      <view class="focus-li2" bindtap="changefocus" data-id="2">全国榜</view>
+
+      <!-- 城市榜 -->
+      <view class="focus-list1" wx:if="{{focus_if == 1}}">
+        <view class="order">
+          <view class="order1" wx:if="{{dota.cityPrevThreeList.length > 0}}">
+            <image class="order-avter" src="{{dota.cityPrevThreeList[0].head}}"></image>
+            <image class="order-jf" src="{{imgsrc}}no1.png"></image>
+            <view class="order-name">{{dota.cityPrevThreeList[0].nickname}}</view>
+            <view class="order-nub">{{dota.cityPrevThreeList[0].score}}</view>
+          </view>
+          <view class="order2" wx:if="{{dota.cityPrevThreeList.length > 1}}">
+            <image class="order-avter" src="{{dota.cityPrevThreeList[1].head}}"></image>
+            <image class="order-jf" src="{{imgsrc}}no2.png"></image>
+            <view class="order-name">{{dota.cityPrevThreeList[1].nickname}}</view>
+            <view class="order-nub">{{dota.cityPrevThreeList[1].score}}</view>
+          </view>
+          <view class="order3" wx:if="{{dota.cityPrevThreeList.length > 2}}">
+            <image class="order-avter" src="{{dota.cityPrevThreeList[2].head}}"></image>
+            <image class="order-jf" src="{{imgsrc}}no3.png"></image>
+            <view class="order-name">{{dota.cityPrevThreeList[2].nickname}}</view>
+            <view class="order-nub">{{dota.cityPrevThreeList[2].score}}</view>
+          </view>
+        </view>
+        <view class="phorder">
+          <view class="phorderli" wx:for="{{dota.cityOtherList}}" wx:key="index">
+            <view class="fivexing">{{item.pm + 3}}</view>
+            <image class="phorderavter" src="{{item.head}}"></image>
+            <view class="phorder-name">{{item.nickname}}</view>
+            <view class="phorder-fen">{{item.score}}</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 全国榜 -->
+      <view class="focus-list2" wx:if="{{focus_if == 2}}">
+        <view class="order">
+          <view class="order1" wx:if="{{dota.countyPrevThree.length > 0}}">
+            <view class="order-city">{{dota.countyPrevThree[0].city}}</view>
+            <image class="order-avter" src="{{dota.countyPrevThree[0].head}}"></image>
+            <image class="order-jf" src="{{imgsrc}}no1.png"></image>
+            <view class="order-name">{{dota.countyPrevThree[0].nickname}}</view>
+            <view class="order-nub">{{dota.countyPrevThree[0].score}}</view>
+
+          </view>
+          <view class="order2" wx:if="{{dota.countyPrevThree.length > 1}}">
+            <view class="order-city">{{dota.countyPrevThree[1].city}}</view>
+            <image class="order-avter" src="{{dota.countyPrevThree[1].head}}"></image>
+            <image class="order-jf" src="{{imgsrc}}no2.png"></image>
+            <view class="order-name">{{dota.countyPrevThree[1].nickname}}</view>
+            <view class="order-nub">{{dota.countyPrevThree[1].score}}</view>
+          </view>
+          <view class="order3" wx:if="{{dota.countyPrevThree.length > 2}}">
+            <view class="order-city">{{dota.countyPrevThree[2].city}}</view>
+            <image class="order-avter" src="{{dota.countyPrevThree[2].head}}"></image>
+            <image class="order-jf" src="{{imgsrc}}no3.png"></image>
+            <view class="order-name">{{dota.countyPrevThree[2].nickname}}</view>
+            <view class="order-nub">{{dota.countyPrevThree[2].score}}</view>
+          </view>
+        </view>
+        <view class="phorder">
+          <view class="phorderli" wx:for="{{dota.countyOtherThree}}" wx:key="index">
+            <view class="fivexing">{{item.pm + 3}}</view>
+            <image class="phorderavter" src="{{item.head}}"></image>
+            <view class="phorder-name">{{item.nickname}}</view>
+            <view class="phorder-city">{{item.city}}</view>
+            <view class="phorder-fen">{{item.score}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="signin">
+      <view class="signtext">已签到 {{dota.lx_qd_num}} 天</view>
+      <view class="signinview">
+        <view class="signinul">
+          <view class="signinli {{item.is_today_qd == '1' ? 'active':''}}" wx:for="{{dota.qdList}}" wx:key="index" bindtap="signin" data-id="{{item.is_today}}">
+            <view></view>
+            <view>{{item.score}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="activity1">
+      <image class="activity1icon" src="{{imgsrc}}activity1icon.png"></image>
+      <view>参与问卷填写得积分</view>
+      <view>完整填写问卷可获得200积分</view>
+      <button class="activity1btn" bindtap="clicktoquestion"></button>
+    </view>
+    <view class="activity2">
+      <image class="activity2icon" src="{{imgsrc}}activity2icon.png"></image>
+      <view>上传亲子互动视频得积分</view>
+      <view>分享好友点赞，获赞双倍积分</view>
+      <button class="activity1btn" bindtap="clicktovideo"></button>
+    </view>
+    <view class="activity3">
+      <image class="activity2icon" src="{{imgsrc}}activity3icon.png"></image>
+      <view>互动游戏得积分</view>
+      <view>每日游戏最高分计入总积分</view>
+      <button class="activity3btn" bindtap="clicktogame"></button>
+    </view>
+    <view class="remen">
+      <block wx:if="{{dota.videoList.length>0}}">热门展示</block>
+    </view>
+    <view class="videozs">
+
+      <view class="videoli" wx:for="{{dota.videoList}}" wx:key="index">
+        <view class="videolis" bindtap="clicktovideod" data-id="{{item.id}}">
+          <image mode="aspectFit" src="{{item.img_path}}"></image>
+        </view>
+        <view class="videolic" bindtap="clicktovideod" data-id="{{item.id}}">
+          <image src="{{imgsrc}}videoclick.png"></image>
+        </view>
+        <view class="videolid">
+          <image class="videoavter" src="{{item.head}}"></image>
+          <view class="videoname">{{item.nickname}}</view>
+          <view class="videotime">{{item.createymd}}</view>
+          <view class="videoclickzan" bindtap="clickzan" data-id="{{item.id}}" data-index="{{index}}">
+            <image src="https://small.moreedge.cn/zh_smallxcx/video/icon2.png" wx:if="{{item.is_zan == 1}}"></image>
+            <image src="{{imgsrc}}good.png" wx:else="{{item.is_zan == 0}}"></image>
+            <view>{{item.help_number}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="gotovideohome" bindtap="clicktovideolist">进入视频大厅</view>
+    <view id="detail" style="width: 100%;height: 30rpx;"></view>
+  </scroll-view>
+
+
+<!-- 业主填写信息弹窗 -->
+<view class="pageshade-box" wx:if="{{dota.is_show_input == '1'}}">
+  <!-- <view class="pageshade-box"> -->
+  <view class="pageshadeBox">
+    <view class="pageshade">
+      <view class="pageshadeContent">
+        <view class="pageshade_title">为确保您参赛信息的准确性，请选择所在城市</view>
+        <view class="searchCityBox">
+          <view class="searchCityItem"><input type="text" bindinput="searchCity" placeholder="*请输入所在城市首字母" /></view>
+          <view class="btn_search" bindtap="getCityList">搜索</view>
+        </view>
+        <view class="cityBox">
+          <view class="cityItem {{chooseCityId==index?'curCity':''}}" bindtap="chooseCity" wx:for="{{cityList}}" data-id="{{index}}" data-city="{{item.city}}" wx:key="index">{{item.city}}</view>
+        </view>
+      </view>
+    </view>
+    <button class="pagesubbtn" bindtap="submitYZpage">提交</button>
+  </view>
+</view>
+
+<!-- 活动规则 -->
+<view class="ruleshade-box" wx:if="{{is_rule}}">
+  <view class="rulebox">
+    <view class="ruleview">
+      <image src="{{imgsrc}}ruletext.png"></image>
+    </view>
+  </view>
+  <view class="ruleclose" bindtap="closerule"></view>
+</view>
+
+<view class="bar">
+  <view class="baricon1">
+    <image src="{{imgsrc}}baricon1.png"></image>
+    <view style="color:#168EF0">首页</view>
+  </view>
+  <view bindtap="clicktoac" class="baricon2">
+    <image src="{{imgsrc}}baricon5.png"></image>
+    <view>活动</view>
+  </view>
+  <view bindtap="clicktomy" class="baricon3">
+    <image src="{{imgsrc}}baricon6.png"></image>
+    <view>我的</view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<!-- 自定义顶部栏 -->
+<view class="nav-bar" wx:if="{{defaultData.showTitle}}" style="height:{{navBarHeight}}px;background:{{defaultData.bgColor==''?'':defaultData.bgColor}}">
+  <view class="nav-title" style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px;top:{{menuTop}}px;">{{defaultData.title}}</view>
+  <!-- <view wx:if="{{defaultData.showHome}}" catchtap="goHome" class="nav-home" style="top:{{menuTop-5}}px">
+    <image mode="widthFix" src="{{baseUrl}}images/topnav/btn_home.png?v={{version}}"></image>
+  </view>
+  <view wx:if="{{defaultData.showBack}}" catchtap="goBack" data-url="{{defaultData.goUrl}}" class="nav-btn" style="top:{{menuTop}}px">
+    <image mode="widthFix" src="{{baseUrl}}images/topnav/btn_back.png?v={{version}}"></image>
+  </view> -->
+  <!-- <view wx:if="{{defaultData.showLogo}}" class="nav-logo" style="top:{{menuTop}}px">
+    <image mode="widthFix" src="{{baseUrl}}images/topnav/logo.png?v={{version}}"></image>
+  </view> -->
+</view>
+
+<!-- 占位，高度与顶部栏一样 -->
+<view wx:if="{{defaultData.showViewBox}}" style="height:{{navBarHeight}}px;background-color: #242D35;"></view>

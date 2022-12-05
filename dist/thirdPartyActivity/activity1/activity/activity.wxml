@@ -1,0 +1,62 @@
+<!--pages/activity1/activity/activity.wxml-->
+<!-- 活动页 -->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="content">
+  <view class="home">
+    <view class="music {{isMusic ? 'musicon':''}}" catchtap="music">
+      <view class="music-li"></view>
+      <view class="music-li"></view>
+      <view class="music-li"></view>
+    </view>
+    <view class="activity">
+      <image class="activity4icon" src="{{imgsrc}}activity4icon.png"></image>
+      <view>上传步数获取积分</view>
+      <view>采集每日微信运动步数兑换积分</view>
+      <button class="activity4btn" bindtap="uploadrun"></button>
+    </view>
+    <view class="activity_qd">
+    <view class="signtext">已签到 {{lx_qd_num}} 天</view>
+    <view class="signinview">
+      <view class="signinul">
+        <view class="signinli {{item.is_today_qd == '1' ? 'active':''}}" wx:for="{{qdList}}" wx:key="index" bindtap="signin" data-id="{{item.is_today}}">
+          <view></view>
+          <view>{{item.score}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class="activity">
+      <image class="activity1icon" src="{{imgsrc}}activity1icon.png"></image>
+      <view>参与问卷填写得积分</view>
+      <view>完整填写问卷可获得200积分</view>
+      <button class="activity1btn" bindtap="clicktoquestion"></button>
+    </view>
+    <view class="activity">
+      <image class="activity2icon" src="{{imgsrc}}activity2icon.png"></image>
+      <view>上传亲子互动视频得积分</view>
+      <view>分享好友点赞，获赞双倍积分</view>
+      <button class="activity1btn" bindtap="clicktovideo"></button>
+    </view>
+    <view class="activity">
+      <image class="activity2icon" src="{{imgsrc}}activity3icon.png"></image>
+      <view>互动游戏得积分</view>
+      <view>每日游戏最高分计入总积分</view>
+      <button class="activity3btn" bindtap="clicktogame"></button>
+    </view>
+  </view>
+</view>
+
+<view class="bar">
+  <view bindtap="clicktoindex" class="baricon1">
+    <image src="{{imgsrc}}baricon4.png"></image>
+    <view>首页</view>
+  </view>
+  <view bindtap="clicktoac" class="baricon2">
+    <image src="{{imgsrc}}baricon2.png"></image>
+    <view style="color:#168EF0">活动</view>
+  </view>
+  <view bindtap="clicktomy" class="baricon3">
+    <image src="{{imgsrc}}baricon6.png"></image>
+    <view>我的</view>
+  </view>
+</view>

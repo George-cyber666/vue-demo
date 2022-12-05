@@ -1,0 +1,19 @@
+<!--pages/activity/index/questionnairefive.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="container">
+  <view class="container-hd">为了便于后续能策划出更丰富的活动，以满足不同家庭的需求，请完善以下信息。</view>
+  <view class="questionnaire">
+    <textarea value="{{option}}" bindinput="changeinp" placeholder="请写下您的建议"></textarea>
+  </view>
+  <button class="questionnaire-btn" bindtap="clicktoplan"></button>
+</view>
+
+<view class="wjshade" wx:if="{{show}}">
+  <view class="wj">
+    <view class="text1">【问卷信息提交成功】</view>
+    <view class="text2">恭喜您获得！</view>
+    <view class="text3">200 <view>积分</view>
+    </view>
+    <button class="wjbtn" bindtap="clicktoindex">返回首页</button>
+  </view>
+</view>

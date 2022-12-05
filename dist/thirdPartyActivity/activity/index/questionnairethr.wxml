@@ -1,0 +1,25 @@
+<!--pages/activity/index/questionnairethr.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="container">
+  <view class="container-hd">为了便于后续能策划出更丰富的活动，以满足不同家庭的需求，请完善以下信息。</view>
+  <view class="questionnaire">
+    <view class="inp">
+      <view class="inpts">*</view>
+      <view>小孩一</view>
+      <input placeholder="请填写" type="number" maxlength="6" value="{{dota.nub1}}" bindinput="changeinp1" />
+    </view>
+    <view class="inp">
+      <view>小孩二</view>
+      <input placeholder="请选填" type="number" maxlength="6" value="{{dota.nub2}}" bindinput="changeinp2" />
+    </view>
+    <view class="inp">
+      <view>小孩三</view>
+      <input placeholder="请选填" type="number" maxlength="6" value="{{dota.nub3}}" bindinput="changeinp3" />
+    </view>
+    <view class="inp">
+      <view>小孩四</view>
+      <input placeholder="请选填" type="number" maxlength="6" value="{{dota.nub4}}" bindinput="changeinp4" />
+    </view>
+  </view>
+  <button class="questionnaire-btn" bindtap="clicktoplan"></button>
+</view>

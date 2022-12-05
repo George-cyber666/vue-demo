@@ -1,0 +1,61 @@
+/**index.wxss**/
+.container {
+  width: 100%;
+  height: 100vh;
+  
+  padding-top: 204rpx;
+  box-sizing: border-box;
+  background: #4190f6 url(https://small.moreedge.cn/zh_smallxcx/activity1/bg1.png) no-repeat top/100%;
+}
+
+.clickto {
+  width: 160rpx;
+  height: 60rpx;
+  margin-left: 37rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+  /* border: 1px solid #000; */
+  color: #0493fd;
+  text-align: center;
+  line-height: 60rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+
+.text1 {
+  width: 636rpx;
+  line-height: 40rpx;
+  margin: 0 auto;
+  margin-top: 854rpx;
+  text-align: left;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.containerbtn {
+  width: 650rpx !important;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-top: 36rpx;
+  background: url(https://small.moreedge.cn/zh_smallxcx/activity1/btn1.png) no-repeat top/100%;
+}
+
+.text2 {
+  width: 520rpx;
+  line-height: 40rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+.text3 {
+  width: 520rpx;
+  line-height: 40rpx;
+  margin: 0 auto;
+  margin-top: 4rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+}

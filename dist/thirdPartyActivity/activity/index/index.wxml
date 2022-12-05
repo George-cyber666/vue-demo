@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<navigation-bar default-data="{{defaultData}}"></navigation-bar>
+<view class="container">
+  <view class="clickto" bindtap="clicktoindex">返回</view>
+  <view class="text1">为更好的提升活动体验，特附上本次调查问卷，敬请惠予宝贵意见。我们将在对您的反馈进行细致分析的基础上，结合活动制定2023年亲子运动嘉年华活动，您的信息与建议我们将会认真阅读并对您提供的信息进行保密</view>
+  <button class="containerbtn" bindtap="clickto"></button>
+  <view class="text2">在活动期间完善问卷调研，则可获得200积分。</view>
+  <view class="text3">( 每位用户仅一次填写机会 )</view>
+</view>
