@@ -6,7 +6,10 @@
     </div>
     <router-view />
 </template>
+<script>
+</script>
 <style lang="less">
+@import '~@/style/main.css';
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
